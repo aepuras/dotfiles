@@ -1,12 +1,19 @@
-"|  \/  (_) |                        (_)
-"| .  . |_| | _____  ___   _ ____   ___ _ __ ___  _ __ ___
-"| |\/| | | |/ / _ \/ __| | '_ \ \ / / | '_ ` _ \| '__/ __|
-"| |  | | |   <  __/\__ \ | | | \ V /| | | | | | | | | (__
-"\_|  |_/_|_|\_\___||___/ |_| |_|\_/ |_|_| |_| |_|_|  \___|
-"
-" Author: Mike Hartington
-" repo  : https://github.com/mhartington/dotfiles/
-"
+"      ..      .         ....      ..                            ..      ...          ..                     ...         
+"   x88f` `..x88. .>   +^""888h. ~"888h     x8h.     x8.      :~"8888x :"%888x     :**888H: `: .xH""     .x888888hx    : 
+" :8888   xf`*8888%   8X.  ?8888X  8888f  :88888> .x8888x.   8    8888Xf  8888>   X   `8888k XX888      d88888888888hxx  
+":8888f .888  `"`    '888x  8888X  8888~   `8888   `8888f   X88x. ?8888k  8888X  '8hx  48888 ?8888     8" ... `"*8888%`  
+"88888' X8888. >"8x  '88888 8888X   "88x:   8888    8888'   '8888L'8888X  '%88X  '8888 '8888 `8888    !  "   ` .xnxx.    
+"88888  ?88888< 888>  `8888 8888X  X88x.    8888    8888     "888X 8888X:xnHH(``  %888>'8888  8888    X X   .H8888888%:  
+"88888   "88888 "8%     `*` 8888X '88888X   8888    8888       ?8~ 8888X X8888      "8 '888"  8888    X 'hn8888888*"   > 
+"88888 '  `8888>       ~`...8888X  "88888   8888    8888     -~`   8888> X8888     .-` X*"    8888    X: `*88888%`     ! 
+"`8888> %  X88!         x8888888X.   `%8"   8888    8888     :H8x  8888  X8888       .xhx.    8888    '8h.. ``     ..x8> 
+" `888X  `~""`   :     '%"*8888888h.   "  -n88888x>"88888x-  8888> 888~  X8888     .H88888h.~`8888.>   `88888888888888f  
+"   "88k.      .~      ~    888888888!`     `%888"  4888!`   48"` '8*~   `8888!`  .~  `%88!` '888*~     '%8888888888*"   
+"     `""*==~~`             X888^"""          `"      ""      ^-==""      `""           `"     ""          ^"****""`     
+"                           `88f                                                                                         
+"                            88                                                                                          
+"                            ""                                                                                          
+
 
 " Setup dein  ---------------------------------------------------------------{{{
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
@@ -123,7 +130,7 @@
   call dein#add('mhartington/oceanic-next')
   " call dein#add('mhartington/operator-next')
   call dein#add('mhartington/nvim-typescript')
-  call dein#add('mhartington/vim-angular2-snippets')
+  " call dein#add('mhartington/vim-angular2-snippets')
   call dein#add('mhartington/deoplete-github')
   " call dein#local('~/GitHub', {},['denite.nvim'])
   " call dein#local('~/GitHub', {},['neomake'])
@@ -132,6 +139,13 @@
   " call dein#add('majutsushi/tagbar')
   call dein#add('ryanoasis/vim-devicons')
   call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+
+ " my plugins
+
+  call dein#add('jeffkreeftmeijer/vim-numbertoggle')
+  call dein#add('wikitopian/hardmode')
+  call dein#add('ctrlpvim/ctrlp.vim')
+
   if dein#check_install()
     call dein#install()
     let pluginsExist=1
@@ -156,7 +170,8 @@
   set noswapfile
   filetype on
   set  number
-  set tabstop=2 shiftwidth=2 expandtab
+" set tabstop=2 shiftwidth=2 expandtab
+  set tabstop=4 shiftwidth=4
   set conceallevel=0
 " block select not limited by shortest line
   set virtualedit=
@@ -494,14 +509,14 @@
   noremap <leader>f :Neoformat<CR>
 
   " Enable alignment
-  " let g:neoformat_basic_format_align = 1
-  " let g:neoformat_read_from_buffer = 0
-  " let g:neoformat_basic_format_retab = 1
-  " let g:neoformat_basic_format_trim = 1
-  "
-  " let g:neoformat_enabled_html = ['html-beautify']
-  " let g:neoformat_enabled_javascript = ['js-beautify']
-  " let g:neoformat_enabled_json = ['js-beautify']
+   let g:neoformat_basic_format_align = 1
+   let g:neoformat_read_from_buffer = 0
+   let g:neoformat_basic_format_retab = 1
+   let g:neoformat_basic_format_trim = 1
+
+   let g:neoformat_enabled_html = ['html-beautify']
+   let g:neoformat_enabled_javascript = ['js-beautify']
+   let g:neoformat_enabled_json = ['js-beautify']
 " }}}
 
 " Snipppets -----------------------------------------------------------------{{{
@@ -509,11 +524,11 @@
 " Enable snipMate compatibility feature.
   let g:neosnippet#enable_snipmate_compatibility = 1
   let g:neosnippet#expand_word_boundary = 1
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  imap <C-K>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-K>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-K>     <Plug>(neosnippet_expand_target)
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.config/repos/github.com/Shougo/neosnippet-snippets/neosnippets, ~/Github/ionic-snippets, ~/.config/repos/github.com/matthewsimo/angular-vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.config/nvim/repos/github.com/honza/vim-snippets/snippets'
 
 " SuperTab like snippets behavior.
   " imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
@@ -592,7 +607,7 @@ let g:neosnippet#snippets_directory='~/.config/repos/github.com/Shougo/neosnippe
   autocmd FileType html,css,scss EmmetInstall
 "}}}
 
-" Denite --------------------------------------------------------------------{{{
+" Denite - -------------------------------------------------------------------{{{
 "
   set showtabline=0
 
@@ -754,17 +769,17 @@ let g:neosnippet#snippets_directory='~/.config/repos/github.com/Shougo/neosnippe
 "}}}
 
 " Navigate between vim buffers and tmux panels ------------------------------{{{
-  let g:tmux_navigator_no_mappings = 1
-  nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-  nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-  nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-  nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
-  nnoremap <silent> <C-;> :TmuxNavigatePrevious<cr>
-  tmap <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
-  tmap <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
-  tmap <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
-  tmap <C-h> <C-\><C-n>:TmuxNavigateLeft<CR>
-  tmap <C-;> <C-\><C-n>:TmuxNavigatePrevious<cr>
+  " let g:tmux_navigator_no_mappings = 1
+  " nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+  " nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+  " nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+  " nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
+  " nnoremap <silent> <C-;> :TmuxNavigatePrevious<cr>
+  " tmap <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
+  " tmap <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
+  " tmap <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
+  " tmap <C-h> <C-\><C-n>:TmuxNavigateLeft<CR>
+  " tmap <C-;> <C-\><C-n>:TmuxNavigatePrevious<cr>
 "}}}
 
 " vim-airline ---------------------------------------------------------------{{{
@@ -891,3 +906,11 @@ let g:tagbar_type_typescript = {
   \ }
 
 imap jk <Esc>
+set splitbelow
+set splitright
+
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:indentLine_enabled = 0

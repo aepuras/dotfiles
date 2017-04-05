@@ -113,6 +113,10 @@ function ff(){
   find . -path */node_modules -prune -o -path "$1" -print
 }
 
+function npm-do() {
+  (PATH=$(npm bin):$PATH; eval $@;)
+}
+
 DEFAULT_USER=adriane
 
 export NVM_DIR="/Users/adriane/.nvm"
