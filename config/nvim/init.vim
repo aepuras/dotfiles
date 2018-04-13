@@ -554,11 +554,11 @@ let g:neosnippet#snippets_directory='~/.config/nvim/repos/github.com/honza/vim-s
     let b:deoplete_disable_auto_complete=0
   endfunction
 
-  call deoplete#custom#set('buffer', 'mark', 'buffer')
-  call deoplete#custom#set('ternjs', 'mark', '')
-  call deoplete#custom#set('typescript', 'mark', '')
-  call deoplete#custom#set('omni', 'mark', 'omni')
-  call deoplete#custom#set('file', 'mark', 'file')
+  call deoplete#custom#source('buffer', 'mark', 'buffer')
+  call deoplete#custom#source('ternjs', 'mark', '')
+  call deoplete#custom#source('typescript', 'mark', '')
+  call deoplete#custom#source('omni', 'mark', 'omni')
+  call deoplete#custom#source('file', 'mark', 'file')
   " let g:deoplete#omni_patterns = {}
   " let g:deoplete#omni_patterns.html = ''
   "
@@ -570,10 +570,10 @@ let g:neosnippet#snippets_directory='~/.config/nvim/repos/github.com/honza/vim-s
      endif
   endfunction
   autocmd WinEnter * call Preview_func()
-  call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
+  call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
   " let g:deoplete#enable_debug = 1
   " call deoplete#enable_logging('DEBUG', 'deoplete.log')
-  " call deoplete#custom#set('typescript', 'debug_enabled', 1)
+  " call deoplete#custom#source('typescript', 'debug_enabled', 1)
 "}}}
 
 " Emmet customization -------------------------------------------------------{{{
