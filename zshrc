@@ -1,5 +1,5 @@
 # path to your oh-my-zsh installation.
-export ZSH=/Users/adriane/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,12 +53,12 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/apache-maven/apache-maven-3.3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin/:/usr/local/share/dotnet/"
+export PATH="$(brew --prefix maven@3.3)/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # MAVEN
-export M2_HOME=/usr/local/apache-maven/apache-maven-3.3.3
-export M2=$M2_HOME/bin
+#export M2_HOME=/usr/local/apache-maven/apache-maven-3.3.3
+#export M2=$M2_HOME/bin
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 source $ZSH/oh-my-zsh.sh
@@ -90,21 +90,21 @@ export EVENT_NOKQUEUE=1
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cc="/Users/adriane/tmux.sh"
-alias mob="/Library/Frameworks/Python.framework/Versions/3.4/bin/tmuxomatic /Users/adriane/tmux/ladbrokes-mobile"
-alias desk="/Library/Frameworks/Python.framework/Versions/3.4/bin/tmuxomatic /Users/adriane/tmux/ladbrokes-desktop"
+alias cc="~/tmux.sh"
+#alias mojo="/usr/local/bin/tmuxomatic ~/tmux/mojo"
 alias .='cd ../'
 alias ..='cd ../../'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias npmm='npm --registry http://registry.npmjs.org'
-alias cdd='cd ~/Projects/ladbrokes/desktop/'
-alias cdm='cd ~/Projects/ladbrokes/mobile'
-alias cds='cd ~/Projects/sportsbook'
-alias bod='java -Dmobenga.conf.home=/Users/adriane/Projects/ladbrokes/config/ladbrokes-desktop -jar /Users/adriane/Projects/ladbrokes/config/backoffice/launcher-1.21.4.jar'
-alias bom='java -Dmobenga.conf.home=/Users/adriane/Projects/ladbrokes/config/ladbrokes-mobile -jar /Users/adriane/Projects/ladbrokes/config/backoffice/launcher-1.21.4.jar'
+
+alias cdd='cd ~/Projects/desktop/'
+alias cdm='cd ~/Projects/mobile'
 alias mc='LANG=en_EN.UTF-8 mc'
 alias v='nvim --cmd "lang en_GB"'
+alias cms_mobile='java -Dmobenga.conf.home=/opt/mobenga/apps/mobile/conf/ -jar /opt/mobenga/apps/backoffice/launcher-1.21.13.jar'
+alias cms_dekstop='java -Dmobenga.conf.home=/opt/mobenga/apps/desktop/conf/ -jar /opt/mobenga/apps/backoffice/launcher-1.21.13.jar'
+alias pretty='prettier --check --ignore-path client/.prettierignore'
 
 # FIND aliases: find in files and find file
 alias fif='grep --exclude-dir=*/node_modules -rnw . -e'
@@ -117,10 +117,16 @@ function npm-do() {
   (PATH=$(npm bin):$PATH; eval $@;)
 }
 
-DEFAULT_USER=adriane
+DEFAULT_USER=adrian.epuras
 
-export NVM_DIR="/Users/adriane/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="/Users/adrian.epuras/.nvm"
+#[ -s "/usr/local/opt/nvm.sh" ] && source "/usr/local/opt/nvm.sh"  # This loads nvm
+source $(brew --prefix nvm)/nvm.sh
 
 
 BULLETTRAIN_RUBY_SHOW=false
+
+
+export PATH="$HOME/.jenv/bin:$PATH"
+export PATH="/usr/local/share/dotnet:$PATH"
+eval "$(jenv init -)"

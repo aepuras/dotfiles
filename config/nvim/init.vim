@@ -1,18 +1,18 @@
-"      ..      .         ....      ..                            ..      ...          ..                     ...         
-"   x88f` `..x88. .>   +^""888h. ~"888h     x8h.     x8.      :~"8888x :"%888x     :**888H: `: .xH""     .x888888hx    : 
-" :8888   xf`*8888%   8X.  ?8888X  8888f  :88888> .x8888x.   8    8888Xf  8888>   X   `8888k XX888      d88888888888hxx  
-":8888f .888  `"`    '888x  8888X  8888~   `8888   `8888f   X88x. ?8888k  8888X  '8hx  48888 ?8888     8" ... `"*8888%`  
-"88888' X8888. >"8x  '88888 8888X   "88x:   8888    8888'   '8888L'8888X  '%88X  '8888 '8888 `8888    !  "   ` .xnxx.    
-"88888  ?88888< 888>  `8888 8888X  X88x.    8888    8888     "888X 8888X:xnHH(``  %888>'8888  8888    X X   .H8888888%:  
-"88888   "88888 "8%     `*` 8888X '88888X   8888    8888       ?8~ 8888X X8888      "8 '888"  8888    X 'hn8888888*"   > 
-"88888 '  `8888>       ~`...8888X  "88888   8888    8888     -~`   8888> X8888     .-` X*"    8888    X: `*88888%`     ! 
-"`8888> %  X88!         x8888888X.   `%8"   8888    8888     :H8x  8888  X8888       .xhx.    8888    '8h.. ``     ..x8> 
-" `888X  `~""`   :     '%"*8888888h.   "  -n88888x>"88888x-  8888> 888~  X8888     .H88888h.~`8888.>   `88888888888888f  
-"   "88k.      .~      ~    888888888!`     `%888"  4888!`   48"` '8*~   `8888!`  .~  `%88!` '888*~     '%8888888888*"   
-"     `""*==~~`             X888^"""          `"      ""      ^-==""      `""           `"     ""          ^"****""`     
-"                           `88f                                                                                         
-"                            88                                                                                          
-"                            ""                                                                                          
+"      ..      .         ....      ..                            ..      ...          ..                     ...
+"   x88f` `..x88. .>   +^""888h. ~"888h     x8h.     x8.      :~"8888x :"%888x     :**888H: `: .xH""     .x888888hx    :
+" :8888   xf`*8888%   8X.  ?8888X  8888f  :88888> .x8888x.   8    8888Xf  8888>   X   `8888k XX888      d88888888888hxx
+":8888f .888  `"`    '888x  8888X  8888~   `8888   `8888f   X88x. ?8888k  8888X  '8hx  48888 ?8888     8" ... `"*8888%`
+"88888' X8888. >"8x  '88888 8888X   "88x:   8888    8888'   '8888L'8888X  '%88X  '8888 '8888 `8888    !  "   ` .xnxx.
+"88888  ?88888< 888>  `8888 8888X  X88x.    8888    8888     "888X 8888X:xnHH(``  %888>'8888  8888    X X   .H8888888%:
+"88888   "88888 "8%     `*` 8888X '88888X   8888    8888       ?8~ 8888X X8888      "8 '888"  8888    X 'hn8888888*"   >
+"88888 '  `8888>       ~`...8888X  "88888   8888    8888     -~`   8888> X8888     .-` X*"    8888    X: `*88888%`     !
+"`8888> %  X88!         x8888888X.   `%8"   8888    8888     :H8x  8888  X8888       .xhx.    8888    '8h.. ``     ..x8>
+" `888X  `~""`   :     '%"*8888888h.   "  -n88888x>"88888x-  8888> 888~  X8888     .H88888h.~`8888.>   `88888888888888f
+"   "88k.      .~      ~    888888888!`     `%888"  4888!`   48"` '8*~   `8888!`  .~  `%88!` '888*~     '%8888888888*"
+"     `""*==~~`             X888^"""          `"      ""      ^-==""      `""           `"     ""          ^"****""`
+"                           `88f
+"                            88
+"                            ""
 
 
 " Setup dein  ---------------------------------------------------------------{{{
@@ -145,6 +145,7 @@
   call dein#add('jeffkreeftmeijer/vim-numbertoggle')
   call dein#add('wikitopian/hardmode')
   call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('mileszs/ack.vim')
 
   if dein#check_install()
     call dein#install()
@@ -434,49 +435,49 @@
 " }}}
 
 " NERDTree ------------------------------------------------------------------{{{
-  " map <silent> - :VimFiler<CR>
-	" let g:vimfiler_tree_leaf_icon = ''
-	" let g:vimfiler_tree_opened_icon = '▾'
-	" let g:vimfiler_tree_closed_icon = '▸'
-	" let g:vimfiler_file_icon = ''
-	" let g:vimfiler_marked_file_icon = '*'
-  " let g:vimfiler_expand_jump_to_first_child = 0
-  " let g:vimfiler_force_overwrite_statusline = 0
-  " call vimfiler#custom#profile('default', 'context', {
-  "             \ 'explorer' : 1,
-  "             \ 'winwidth' : 35,
-  "             \ 'winminwidth' : 35,
-  "             \ 'toggle' : 1,
-  "             \ 'auto_expand': 0,
-  "             \ 'parent': 1,
-  "             \ 'explorer_columns' : 'devicons:git',
-  "             \ 'status' : 0,
-  "             \ 'safe' : 0,
-  "             \ 'split' : 1,
-  "             \ 'hidden': 1,
-  "             \ 'no_quit' : 1,
-  "             \ 'force_hide' : 0,
-  "             \ })
-  " augroup vfinit
-  " autocmd FileType vimfiler call s:vimfilerinit()
-  " augroup END
-  " function! s:vimfilerinit()
-  "     set nonumber
-  "     set norelativenumber
-  "     nmap <silent><buffer><expr> <CR> vimfiler#smart_cursor_map(
-  "           \ "\<Plug>(vimfiler_expand_tree)",
-  "           \ "\<Plug>(vimfiler_edit_file)"
-  "           \)
-  "     nmap <silent> m :call NerdUnite()<cr>
-  "     nmap <silent> r <Plug>(vimfiler_redraw_screen)
-  " endf
-  " let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
-  " let g:webdevicons_enable_vimfiler = 0
-  " let g:vimfiler_no_default_key_mappings=1
-  " function! NerdUnite() abort "{{{
-  "   let marked_files =  vimfiler#get_file(b:vimfiler)
-  "   call unite#start(['nerd'], {'file': marked_files})
-	" endfunction "}}}
+  map <silent> - :VimFiler<CR>
+	let g:vimfiler_tree_leaf_icon = ''
+	let g:vimfiler_tree_opened_icon = '▾'
+	let g:vimfiler_tree_closed_icon = '▸'
+	let g:vimfiler_file_icon = ''
+	let g:vimfiler_marked_file_icon = '*'
+  let g:vimfiler_expand_jump_to_first_child = 0
+  let g:vimfiler_force_overwrite_statusline = 0
+  call vimfiler#custom#profile('default', 'context', {
+              \ 'explorer' : 1,
+              \ 'winwidth' : 35,
+              \ 'winminwidth' : 35,
+              \ 'toggle' : 1,
+              \ 'auto_expand': 0,
+              \ 'parent': 1,
+              \ 'explorer_columns' : 'devicons:git',
+              \ 'status' : 0,
+              \ 'safe' : 0,
+              \ 'split' : 1,
+              \ 'hidden': 1,
+              \ 'no_quit' : 1,
+              \ 'force_hide' : 0,
+              \ })
+  augroup vfinit
+  autocmd FileType vimfiler call s:vimfilerinit()
+  augroup END
+  function! s:vimfilerinit()
+      set nonumber
+      set norelativenumber
+      nmap <silent><buffer><expr> <CR> vimfiler#smart_cursor_map(
+            \ "\<Plug>(vimfiler_expand_tree)",
+            \ "\<Plug>(vimfiler_edit_file)"
+            \)
+      nmap <silent> m :call NerdUnite()<cr>
+      nmap <silent> r <Plug>(vimfiler_redraw_screen)
+  endf
+  let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
+  let g:webdevicons_enable_vimfiler = 0
+  let g:vimfiler_no_default_key_mappings=1
+  function! NerdUnite() abort "{{{
+    let marked_files =  vimfiler#get_file(b:vimfiler)
+    call unite#start(['nerd'], {'file': marked_files})
+	endfunction "}}}
 
   augroup ntinit
   autocmd FileType nerdtree call s:nerdtreeinit()
@@ -914,3 +915,7 @@ set splitright
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:indentLine_enabled = 0
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
